@@ -4,12 +4,26 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
+  //res.redirect('/login');
 });
 
 router.get('/login', function(req, res, next){
-  res.render('login')
-})
+  res.render('login');
+});
 
+router.post('/login', function(req, res, next){
+  console.log('帳號：' + req.body.userid);
+  console.log('密碼：' + req.body.password);
+  res.redirect('/board/list');
+});
+/*
+router.route('/login')
+  .get(function(req, res, next){
+      res.render('login');
+}).post(function(req, res, next){
+
+});
+*/
 router.get('/login/:userid/:password', function(req, res){
   // res.send(req.params);
   res.write('hello1');

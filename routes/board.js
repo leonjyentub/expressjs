@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/list', function(req, res, next){
-  res.send('列表功能')
+  res.render('temptest');
 })
 
 router.get('/edit', function(req, res, next){
