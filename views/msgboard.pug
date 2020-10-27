@@ -1,4 +1,11 @@
 extends layout
 
 block content
-    
+    .row
+        h1= title
+    each msg in msglist
+        .card
+            .car-body
+                h5.card-title #{msg.author}-貼文：#{msg.title}
+                p.card-text #{msg.content}
+                a.btn.btn-primary(href="#") 修改
